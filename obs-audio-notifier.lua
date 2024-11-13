@@ -8,8 +8,8 @@ local SND_FILENAME = 0x00020000
 local fdwSound_flags = SND_ASYNC + SND_NODEFAULT + SND_FILENAME
 local fdwSound_flags_looped = SND_ASYNC + SND_NODEFAULT + SND_LOOP + SND_FILENAME
 
--- Put a sounds of your choice in directory res/ and don't forget to match its names either in code below or rename your existing files.
-SOUND_FILEPATH = script_path() .. "./res/replay-buffer-saved.wav"
+-- Put a sounds of your choice in directory res and don't forget to match its names either in code below or rename your existing files.
+SOUND_REPLAY_BUFFER_SAVED_PATH = script_path() .. "./res/replay-buffer-saved.wav"
 
 ffi.cdef[[
     bool PlaySound(const char *pszSound, void *hmod, uint32_t fdwSound);
@@ -26,7 +26,7 @@ end
 function on_event(event)
   -- see more event: https://docs.obsproject.com/reference-frontend-api
   if event == obs.OBS_FRONTEND_EVENT_REPLAY_BUFFER_SAVED then
-    playsound(SOUND_FILEPATH)
+    playsound(SOUND_REPLAY_BUFFER_SAVED_PATH)
   end
 end
 
