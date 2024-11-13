@@ -1,2 +1,4 @@
 # obs-audio-notifier
-An audio notifier script for obs.
+
+An audio notifier script for OBS Studio.
+
